@@ -50,3 +50,45 @@ print("Items in catalog:", count_items(catalog))
 # Override describe() and item_type() in your subclass
 # Create instances of your new subclass and add them to the catalog
 # Call count_items(catalog) again to show the updated count
+
+class Magazine(LibraryItem):
+    """A magazine in the library catalog."""
+    def __init__(self, title, year, issue_number):
+        super().__init__(title, year)
+        self.issue_number = issue_number
+
+    def describe(self):
+        return f"{self.title}, Issue {self.issue_number} ({self.year})"
+
+    def item_type(self):
+        return "Magazine"
+
+class DVD(LibraryItem):
+    """A DVD in the library catalog."""
+    def __init__(self, title, year, duration_minutes):
+        super().__init__(title, year)
+        self.duration_minutes = duration_minutes
+
+    def describe(self):
+        return f"{self.title} ({self.year}) - {self.duration_minutes} min"
+
+    def item_type(self):
+        return "DVD"
+
+
+# Create new items
+mag1 = Magazine("Python Monthly", 2024, "07")
+dvd1 = DVD("Inception", 2010, 148)
+
+# Add them to the catalog
+catalog.append(mag1)
+catalog.append(dvd1)
+
+
+print("\n--- Full Catalog ---")
+for item in catalog:
+    print(item.describe())
+    print("Type:", item.item_type())
+
+
+print("Items in catalog:", count_items(catalog))

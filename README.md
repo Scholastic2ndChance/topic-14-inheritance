@@ -21,7 +21,7 @@ The theme is a simple library catalog. Read the existing code, then extend it in
 
 ## Starter Code
 
-The starter code is provided in `starter.py` in this repository. Copy it into your fork as your starting point and add your new subclass(es) below the existing code.
+I copied the code below and placed it into a new file. 
 
 ```python
 # Topic 14 Collaborative Assignment
